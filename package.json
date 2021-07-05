@@ -1,0 +1,22 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "Will generate profiles from input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smithRBG/Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smithRBG/Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/smithRBG/Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  }
+}
