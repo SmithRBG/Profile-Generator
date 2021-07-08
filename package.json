@@ -4,7 +4,8 @@
   "description": "Will generate profiles from input.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
