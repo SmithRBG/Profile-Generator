@@ -14,6 +14,14 @@ const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
 const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
 const render = require("./Template/template1.js");
 
+//This will render the file
+function createHTML() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(Team), "utf-8");
+  };
+
 //this starts the prompts for the terminal
 function beginQuestions() {
     inquirer.prompt(
@@ -202,11 +210,4 @@ function createDocument(member) {
 });
     
 
-//This will render the file
-function createHTML() {
-    if (!fs.existsSync(OUTPUT_DIR)) {
-      fs.mkdirSync(OUTPUT_DIR)
-    }
-    fs.writeFileSync(outputPath, render(Team), "utf-8");
 }
-  };
