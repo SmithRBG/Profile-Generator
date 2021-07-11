@@ -9,6 +9,7 @@ const Intern = require("./Util/intern");
 const Team = []
 
 //connecting information that will render the files
+const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
 const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
 const render = require("./Template/template.html");
@@ -151,7 +152,7 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <h5 class="card-header">${name}<br><br>${role}</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">${id} </li>
             <li class="list-group-item"> ${email}</li>
@@ -166,7 +167,7 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <h5 class="card-header">${name}<br><br>${role}</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">${id} </li>
             <li class="list-group-item"> ${email}</li>
@@ -181,7 +182,7 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <h5 class="card-header">${name}<br><br>${role}</h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">${id} </li>
             <li class="list-group-item"> ${email}</li>
