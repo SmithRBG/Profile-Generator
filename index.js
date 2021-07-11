@@ -3,8 +3,8 @@ const inquirer = require("inquirer");
 //const style = require("./Template/style.css")
 
 // pulling in connected js files
-const Engineer = require("./Util/engineer")
-const Manager = require("./Util/manager")
+const Engineer = require("./Util/engineer");
+const Manager = require("./Util/manager");
 const Intern = require("./Util/intern");
 const Team = []
 
@@ -160,11 +160,11 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br><br>${role}</h5>
+        <h5 class="card-header">${data.EngName}<br><br>${data.EngRole}</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${id} </li>
-            <li class="list-group-item"> ${email}</li>
-            <li class="list-group-item">${github} </li>
+            <li class="list-group-item">${data.EngId} </li>
+            <li class="list-group-item"> ${data.EngEmail}</li>
+            <li class="list-group-item">${data.EngGithub} </li>
         </ul>
         </div>
     </div>`

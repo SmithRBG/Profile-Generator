@@ -1,4 +1,5 @@
-let temp = `<!DOCTYPE html>
+var myFunc = function(team, data, member) {
+    return`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +20,18 @@ let temp = `<!DOCTYPE html>
       <div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">Name<br><br>Role</h5>
+        <h5 class="card-header"><br><br></h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: </li>
-            <li class="list-group-item">Email Address: </li>
-            <li class="list-group-item">Office Phone: </li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
         </ul>
         </div>
     </div>
 </body>
 </html>`
+};
+
+
+
+module.exports = myFunc
