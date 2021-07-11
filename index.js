@@ -12,7 +12,7 @@ const Team = []
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
 const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
-const render = require("./Template/template.html");
+const render = require("./Template/template1.js");
 
 //this starts the prompts for the terminal
 function beginQuestions() {
