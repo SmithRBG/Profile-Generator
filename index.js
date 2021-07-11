@@ -7,10 +7,12 @@ const Engineer = require("./Util/engineer")
 const Manager = require("./Util/manager")
 const Intern = require("./Util/intern");
 const Team = []
+
 //connecting information that will render the files
-/* const OUTPUT_DIR = path.resolve(__dirname, "output")
+const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
 const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
-const render = require("./Template/template.html"); */
+const render = require("./Template/template.html");
+
 //this starts the prompts for the terminal
 function beginQuestions() {
     inquirer.prompt(
@@ -137,6 +139,7 @@ function addManager() {
 }
 
 function createDocument(member) {
+    return new promises(function(resolve, reject) { //helps with path.resolve
     const name = member.getName();
     const id = member.getId();
     const email = member.getEmail();
@@ -195,7 +198,7 @@ function createDocument(member) {
             };
             return resolve();
         });
-};
+});
     
 
 //This will render the file
@@ -204,6 +207,5 @@ function createHTML() {
       fs.mkdirSync(OUTPUT_DIR)
     }
     fs.writeFileSync(outputPath, render(Team), "utf-8");
-  }
-
- /*  createDocument(); */
+}
+  };
