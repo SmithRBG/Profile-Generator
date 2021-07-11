@@ -136,6 +136,68 @@ function addManager() {
     })
 }
 
+function createDocument(member) {
+    const name = member.getName();
+    const id = member.getId();
+    const email = member.getEmail();
+    const role = member.role();
+    let data = '';
+
+    if(role === "engineer") {
+        const github = member.github();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${id} </li>
+            <li class="list-group-item"> ${email}</li>
+            <li class="list-group-item">${github} </li>
+        </ul>
+        </div>
+    </div>`
+    } 
+
+    else if (role === "intern") {
+        const school = member.school();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${id} </li>
+            <li class="list-group-item"> ${email}</li>
+            <li class="list-group-item">${school} </li>
+        </ul>
+        </div>
+    </div>`
+    }
+
+    else if (role === "manager") {
+        const office = member.office();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${name}<br /><br />Role</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${id} </li>
+            <li class="list-group-item"> ${email}</li>
+            <li class="list-group-item">${office} </li>
+        </ul>
+        </div>
+    </div>`
+    }
+
+    console.log("adding team member");
+        fs.appendFile("./output/team.html", data, function (err) {
+            if (err) {
+                return reject(err);
+            };
+            return resolve();
+        });
+};
+    
+
 //This will render the file
 function createHTML() {
     if (!fs.existsSync(OUTPUT_DIR)) {
