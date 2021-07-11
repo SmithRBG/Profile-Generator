@@ -205,3 +205,5 @@ function createHTML() {
     }
     fs.writeFileSync(outputPath, render(Team), "utf-8");
   }
+
+  createDocument();
