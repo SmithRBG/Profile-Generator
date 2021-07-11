@@ -2,16 +2,16 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const style = require("./Template/style")
 
-
+// pulling in connected js files
 const Engineer = require("./Util/engineer")
 const Manager = require("./Util/manager")
 const Intern = require("./Util/intern");
 const Team = []
-
+//connecting information that will render the files
 const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
 const render = require("./Template/template.html");
-
+//this starts the prompts for the terminal
 function beginQuestions() {
     inquirer.prompt([
         {
@@ -26,6 +26,7 @@ function beginQuestions() {
             ],
         }
     ])
+    //using a switch case to input information depending on selection above
     .then(userSelect => {
         switch(userSelect.TeamMember) {
             case "engineer":
