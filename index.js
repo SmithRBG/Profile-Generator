@@ -175,11 +175,11 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br><br>${role}</h5>
+        <h5 class="card-header">${InName}<br><br>${InRole}</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${id} </li>
-            <li class="list-group-item"> ${email}</li>
-            <li class="list-group-item">${school} </li>
+            <li class="list-group-item">${InId} </li>
+            <li class="list-group-item"> ${InEmail}</li>
+            <li class="list-group-item">${InSchool} </li>
         </ul>
         </div>
     </div>`
@@ -190,11 +190,11 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${name}<br><br>${role}</h5>
+        <h5 class="card-header">${ManName}<br><br>${ManRole}</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${id} </li>
-            <li class="list-group-item"> ${email}</li>
-            <li class="list-group-item">${office} </li>
+            <li class="list-group-item">${ManId} </li>
+            <li class="list-group-item"> ${ManEmail}</li>
+            <li class="list-group-item">${ManOffice} </li>
         </ul>
         </div>
     </div>`
