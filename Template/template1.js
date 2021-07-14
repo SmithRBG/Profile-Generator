@@ -1,7 +1,8 @@
+const Engineer = require("../Util/engineer.js");
+//const indexPrompts = require("./index.js");
+
 var myFunc = function(Team, data, member) {
     /* var myString = Team[0].name */
-
-    if (beginQuestions())
 
     return`<!DOCTYPE html>
 <html lang="en">
