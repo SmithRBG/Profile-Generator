@@ -1,4 +1,8 @@
 var myFunc = function(Team, data, member) {
+    /* var myString = Team[0].name */
+
+    if (beginQuestions())
+
     return`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,3 +39,13 @@ var myFunc = function(Team, data, member) {
 
 
 module.exports = myFunc
+
+/* 1. we should probably stilll use template1.js, since you're already calling that function in your createHTML function.
+
+9:01
+2. you'll wanna change the function in template1.js such that it digs into the array with a for-loop, and runs all the if-then logic you already wrote in your createDocument function.
+9:02
+3. THEN instead of using fs.appendFile, you could just add these data strings together, stick them in a template literal within div.container, and be done!
+9:03
+Nothing in your createDocument function is working because 1. you're not calling this function and 2. even if you DID call this function once, it might end up appending strings to the wrong place (outside the </html> tag, for instance).
+ */

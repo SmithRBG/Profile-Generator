@@ -11,7 +11,7 @@ const Team = []
 //connecting information that will render the files
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
-const outputPath = path.join(OUTPUT_DIR, "team.html"); //check to see if this needs to change to template
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./Template/template1.js");
 
 //This will render the file
@@ -160,11 +160,11 @@ function createDocument(member) {
         data = `<div class="container">
         <div class="row"><div class="col-6">
         <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${data.EngName}<br><br>${data.EngRole}</h5>
+        <h5 class="card-header">${EngName}<br><br>${EngRole}</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${data.EngId} </li>
-            <li class="list-group-item"> ${data.EngEmail}</li>
-            <li class="list-group-item">${data.EngGithub} </li>
+            <li class="list-group-item">${EngId} </li>
+            <li class="list-group-item"> ${EngEmail}</li>
+            <li class="list-group-item">${EngGithub} </li>
         </ul>
         </div>
     </div>`
@@ -200,7 +200,7 @@ function createDocument(member) {
     </div>`
     }
 
-    console.log("adding team member");
+    console.log("Team Member Added!");
         fs.appendFile("./output/team.html", data, function (err) {
             if (err) {
                 return reject(err);
