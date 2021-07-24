@@ -1,10 +1,65 @@
-const Engineer = require("../Util/engineer.js");
-//const indexPrompts = require("./index.js");
+/* const indexPrompts = require("./index.js"); */
 
-var myFunc = function(Team, data, member) {
-    /* var myString = Team[0].name */
+const Engineer = require("../Util/engineer");
+/*const intern = require("../Util/intern");
+const manager = require("../Util/manager");  */
 
-    return`<!DOCTYPE html>
+function createDocument(member) {
+    return new promises(function(resolve, reject) { //helps with path.resolve
+    const name = member.getName();
+    const id = member.getId();
+    const email = member.getEmail();
+    const role = member.role();
+    let data = '';
+
+    if(role === "engineer") {
+        const github = member.github();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${EngName}<br><br>${EngRole}</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${EngId} </li>
+            <li class="list-group-item"> ${EngEmail}</li>
+            <li class="list-group-item">${EngGithub} </li>
+        </ul>
+        </div>
+    </div>`
+    } 
+
+    else if (role === "intern") {
+        const school = member.school();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${InName}<br><br>${InRole}</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${InId} </li>
+            <li class="list-group-item"> ${InEmail}</li>
+            <li class="list-group-item">${InSchool} </li>
+        </ul>
+        </div>
+    </div>`
+    }
+
+    else if (role === "manager") {
+        const office = member.office();
+        data = `<div class="container">
+        <div class="row"><div class="col-6">
+        <div class="card mx-auto mb-3" style="width: 18rem">
+        <h5 class="card-header">${ManName}<br><br>${ManRole}</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${ManId} </li>
+            <li class="list-group-item"> ${ManEmail}</li>
+            <li class="list-group-item">${ManOffice} </li>
+        </ul>
+        </div>
+    </div>`
+    }
+
+var myFunc = function(Team) {
+    
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,33 +75,27 @@ var myFunc = function(Team, data, member) {
           <h1 class="display-4">Team Overview</h1>
           <p class="lead">Get radical results from this ace team.</p>
         </div>
-      </div>
-
-      <div class="container">
-        <div class="row"><div class="col-6">
-        <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header"><br><br></h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-        </ul>
-        </div>
-    </div>
-</body>
-</html>`
+      </div>`
 };
+      
 
+    member.forEach(function(Team) {
+        let 
+    })
 
+            `<div class="container">
+            <div class="row"><div class="col-6">
+            <div class="card mx-auto mb-3" style="width: 18rem">
+            <h5 class="card-header"><br><br></h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> </li>
+                <li class="list-group-item"> </li>
+                <li class="list-group-item"></li>
+            </ul>
+            </div>
+        </div>
+        </body>
+        </html>`
 
-module.exports = myFunc
+    };
 
-/* 1. we should probably stilll use template1.js, since you're already calling that function in your createHTML function.
-
-9:01
-2. you'll wanna change the function in template1.js such that it digs into the array with a for-loop, and runs all the if-then logic you already wrote in your createDocument function.
-9:02
-3. THEN instead of using fs.appendFile, you could just add these data strings together, stick them in a template literal within div.container, and be done!
-9:03
-Nothing in your createDocument function is working because 1. you're not calling this function and 2. even if you DID call this function once, it might end up appending strings to the wrong place (outside the </html> tag, for instance).
- */

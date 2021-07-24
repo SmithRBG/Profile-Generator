@@ -12,7 +12,8 @@ const Team = []
 const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, "output") //how to resolve this???
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-const render = require("./Template/template1.js");
+const render = require("./Template/template1.js");//testing
+
 
 //This will render the file
 function createHTML() {
@@ -21,6 +22,7 @@ function createHTML() {
     }
     fs.writeFileSync(outputPath, render(Team), "utf-8");
   };
+
 
 //this starts the prompts for the terminal
 function beginQuestions() {
@@ -147,59 +149,6 @@ function addManager() {
     })
 }
 
-function createDocument(member) {
-    return new promises(function(resolve, reject) { //helps with path.resolve
-    const name = member.getName();
-    const id = member.getId();
-    const email = member.getEmail();
-    const role = member.role();
-    let data = '';
-
-    if(role === "engineer") {
-        const github = member.github();
-        data = `<div class="container">
-        <div class="row"><div class="col-6">
-        <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${EngName}<br><br>${EngRole}</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">${EngId} </li>
-            <li class="list-group-item"> ${EngEmail}</li>
-            <li class="list-group-item">${EngGithub} </li>
-        </ul>
-        </div>
-    </div>`
-    } 
-
-    else if (role === "intern") {
-        const school = member.school();
-        data = `<div class="container">
-        <div class="row"><div class="col-6">
-        <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${InName}<br><br>${InRole}</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">${InId} </li>
-            <li class="list-group-item"> ${InEmail}</li>
-            <li class="list-group-item">${InSchool} </li>
-        </ul>
-        </div>
-    </div>`
-    }
-
-    else if (role === "manager") {
-        const office = member.office();
-        data = `<div class="container">
-        <div class="row"><div class="col-6">
-        <div class="card mx-auto mb-3" style="width: 18rem">
-        <h5 class="card-header">${ManName}<br><br>${ManRole}</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">${ManId} </li>
-            <li class="list-group-item"> ${ManEmail}</li>
-            <li class="list-group-item">${ManOffice} </li>
-        </ul>
-        </div>
-    </div>`
-    }
-
     console.log("Team Member Added!");
         fs.appendFile("./output/team.html", data, function (err) {
             if (err) {
@@ -211,3 +160,4 @@ function createDocument(member) {
     
 
 }
+
